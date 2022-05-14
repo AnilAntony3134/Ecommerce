@@ -1,9 +1,10 @@
 import { Send} from '@material-ui/icons'
 import React from 'react'
 import styledComponents from 'styled-components'
+import { mobile } from "../../responsive";
 
 const Container = styledComponents.div`
-    height: 420PX;
+    height: 420px;
     padding:10px;
     display: flex;
     flex-direction: column;
@@ -11,15 +12,18 @@ const Container = styledComponents.div`
     align-items: center;
     background-color: #fcf1d2;
     // padding-top: 60px;
+    ${mobile({height: "250px"})}
 
 `
 const Title = styledComponents.h1`
     font-size: 55px;
+    ${mobile({fontSize: "25px"})}
 `
 const Description = styledComponents.p`
     font-size: 20px;
     margin-top: 0px;
     margin-bottom: 20px;
+    ${mobile({fontSize: "15px"})}
 `
 const Search = styledComponents.div`
      width: 50%;

@@ -1,5 +1,6 @@
 import React from 'react'
 import styledComponents from 'styled-components'
+import { mobile } from "../../responsive";
 
 const Container = styledComponents.div`
     flex: 1;
@@ -7,16 +8,27 @@ const Container = styledComponents.div`
     height: 80vh;
     position: relative;
     transition: all 0.5s ease;
+    ${mobile({height:"30%" , marginTop:"-145px"})}
     &:hover {
         transform: scale(1.02);
     }
+`
+const Wrapper = styledComponents.div`
+    width: 100%;
+    margin: 3px;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.5s ease;
+   
+   
 `
 const Image = styledComponents.img`
     width: 100%;
     margin: 3px;
     height: 100%;
     object-fit: cover;
-
+    ${mobile({height:"40vh"})}
+   
     
 `
 const Info = styledComponents.p`
@@ -42,6 +54,7 @@ const Button = styledComponents.button`
     cursor: pointer;
     font-weight: 600;
     transition: 0.5s;
+    ${mobile({fontSize:"10px"})}
     &:hover {
         background-color: gray;
         color: white;
@@ -53,11 +66,13 @@ const Button = styledComponents.button`
 const CategoryItem = ({item}) => {
   return (
     <Container>
+        <Wrapper>
             <Image src={item.img}/>
             <Info>
                 <Title>{item.title}</Title>
                 <Button>SHOP NOW</Button>
             </Info>
+        </Wrapper>
     </Container>
   )
 }

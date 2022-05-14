@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import styledComponents from "styled-components"
 import { Announcements, Footer, Navbar } from "../components"
 import { Cart } from "../Context"
+import { mobile } from "../responsive";
 
 const Container = styledComponents.div`
 
@@ -20,6 +21,7 @@ const Top = styledComponents.div`
     display: flex;
     justify-content: space-between;
     margin: 0 30px;
+     ${mobile({fontSize:"15px", marginTop:"10px"})}
 `
 const ShopButton = styledComponents.button`
     padding: 10px;
@@ -28,6 +30,7 @@ const ShopButton = styledComponents.button`
     font-weight: 600;
     border: 2px solid gray;
     cursor: pointer;
+    ${mobile({marginRight:"10px"})}
 `
 const WishListContainer = styledComponents.div`
 
@@ -35,6 +38,7 @@ const WishListContainer = styledComponents.div`
 const List = styledComponents.span`
     margin-right: 20px;
     cursor: pointer;
+    ${mobile({display:"none"})}
 `
 const CheckoutButton = styledComponents.button`
     padding: 10px;
@@ -48,6 +52,7 @@ const CheckoutButton = styledComponents.button`
 const Bottom = styledComponents.div`
     display: flex;
     margin-top: 30px;
+    ${mobile({flexDirection:"column"})}
 `
 const Left = styledComponents.div`
     flex: 2;
@@ -67,6 +72,7 @@ const Productimg = styledComponents.div`
 `
 const Img = styledComponents.img`
     width: 200px;
+    ${mobile({width:"150px"})}
 `
 const ProductInfos = styledComponents.div`
     width: 100%;
@@ -113,7 +119,7 @@ const Right= styledComponents.div`
     flex: 1;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     // justify-content: center;
     // box-shadow: 5px 5px 4px #888888;
     border: 1px solid grey;
@@ -126,11 +132,14 @@ const Total= styledComponents.div`
 const Totals= styledComponents.div`
     display:flex;
     justify-content: space-between;
+    width: 80%;
+    ${mobile({justifyContent:"space-between"})}
 
 `
 const Button= styledComponents.button`
     padding: 10px 20px;
     background-color: black;
+    width: 95%;
     color: white;
     font-size: 20px;
     margin-top: 45px;

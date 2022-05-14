@@ -3,6 +3,7 @@ import { Announcements, Footer, Navbar, NewsLetter } from '../components'
 import { useParams } from 'react-router-dom';
 import {popularProducts} from "../components/Modern/data";
 import { useEffect, useState } from 'react';
+import { mobile } from "../responsive";
 
 const Container = styledComponents.div`
     
@@ -11,6 +12,7 @@ const Wrapper = styledComponents.div`
     display: flex;
     align-items: top;
     padding: 50px;
+    ${mobile({flexDirection:"column"})}
 `
 const ImageContainer = styledComponents.div`
     flex: 1;
@@ -19,6 +21,7 @@ const Image = styledComponents.img`
     width: 100%;
     height: 90vh; 
     object-fit: cover;
+    ${mobile({height:"35vh"})}
 `
 const InfoContainer = styledComponents.div`
     // margin-top: -50px;
@@ -32,6 +35,7 @@ const Title = styledComponents.h1`
 const Desc = styledComponents.p`
     font-size: 16px;
     margin: 20px 0px;
+    text-align: justify;
 
 `
 

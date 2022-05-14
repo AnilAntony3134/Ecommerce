@@ -12,7 +12,6 @@ const Container = styledComponents.div`
     display: flex;
     position: relative;
     overflow: hidden;
-    // ${mobile({ flexDirection: "column",})}
 `
 
 const Arrow = styledComponents.div`
@@ -39,6 +38,7 @@ const Wrapper = styledComponents.div`
     display : flex;
     transition: all 1.5s ease;
     transform : translateX(${props=>props.slideIndex * -100}vw);
+   
     
 `
 const Slides = styledComponents.div`
@@ -46,10 +46,9 @@ const Slides = styledComponents.div`
      width: 100vw;
      height: 100%;
      background-color: #${(props)=>props.bg}
-    ${mobile({display: "flex" , flexDirection: "column", width: "100vw",})}
-     
-
+     ${mobile({ justifyContent: "center" , alignItems: "center" , height: "50%"})}
 `
+
 const ImgContainer = styledComponents.div`
     flex: 1;
     height: 100%;
@@ -57,7 +56,7 @@ const ImgContainer = styledComponents.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    ${mobile({width: "100px", height: "50%",})}
+    ${mobile({ height: "50%"})}
 `
 const Circle = styledComponents.div`
     height: 25vw;
@@ -72,24 +71,25 @@ const Image = styledComponents.img`
     height: 100%;
     margin-left: 80px;
     z-index: 3;
+    ${mobile({ marginLeft : "0px"})}
 `
 const InfoContainer = styledComponents.div`
     flex: 1;
     padding: 50px;
     z-index: 1;
-    ${mobile({flex: "0" ,})}
+    ${mobile({ flexDirection: "column" , padding: "0px" , marginRight: "0px"})}
     
 `
 const Title = styledComponents.h1`
     font-size: 70px;
-    ${mobile({fontSize: "25px",})}
+    ${mobile({fontSize: "20px", Width: "20px"})}
 `
 const Desc = styledComponents.p`
     margin: 50px 0;
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 2px;
-    ${mobile({display: "none",})}
+    ${mobile({fontSize: "11px",})}
     
 `
 const Button = styledComponents.button`
@@ -112,13 +112,11 @@ const Slider = () => {
         else{
             setSlideIndex(slideIndex <2 ? slideIndex+1 : 0)
         }
-
     };
 
   return (
     <Container>
         <Arrow direction="left" onClick={()=>handleClick("left")}>
-        {/*  */}
             <ArrowLeftOutlined />
         </Arrow>
         <Wrapper slideIndex={slideIndex}>

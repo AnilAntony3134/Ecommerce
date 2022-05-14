@@ -9,8 +9,10 @@ import { mobile } from "../../responsive";
 
 const Container = styledComponents.div`
   height: 60px;
-  margin-top: 0;
-  margin-bottom: 20px;  
+
+  align-items: center;
+  padding-top: 10px;
+  margin-bottom: 10px;  
   ${mobile({height:"50px"})}
 `;
 const Wrapper = styledComponents.div`

@@ -1,4 +1,6 @@
 import styledComponents from "styled-components"
+import { Footer, Navbar } from "../components"
+import { mobile } from "../responsive";
 
 const Container = styledComponents.div`
 width: 100vw;
@@ -11,6 +13,8 @@ background: linear-gradient(
     display: flex;
     justify-content: center;
     align-items: center;
+    ${mobile({height:"710px"})}
+
 `
 const Wrapper = styledComponents.div`
     background-color: white;
@@ -18,6 +22,7 @@ const Wrapper = styledComponents.div`
     padding: 15px;
     display: flex;
     flex-direction: column;
+    ${mobile({width:"65%"})}
 `
 const Form = styledComponents.form`
     display: flex;
@@ -26,8 +31,8 @@ const Form = styledComponents.form`
 const Title = styledComponents.h1`
     font-size: 30px;
     font-weight: 300;
-    
     margin-top: 0;
+    ${mobile({fontSize:"22px"})}
 `
 const Input = styledComponents.input`
     flex: 1;
@@ -58,25 +63,30 @@ const Link = styledComponents.a`
     cursor: pointer;
     margin-top: 10px;
     transition: 0.25s;
+    ${mobile({fontSize:"12px"})}
 `
 
 const SignIn = () => {
   return (
+      <>
+      <Navbar />
     <Container>
-    <Wrapper>
-        <Title>
-            SIGN IN
-        </Title>
-        <Form>
-            <Input  placeholder="username"/>
-            <Input  placeholder="password"/>
-        </Form>
-        <Button>
-            LOGIN
-        </Button>
-        <Link>CREATE A NEW ACCOUNT</Link>
-    </Wrapper>
-</Container>
+        <Wrapper>
+            <Title>
+                SIGN IN
+            </Title>
+            <Form>
+                <Input  placeholder="username"/>
+                <Input  placeholder="password"/>
+            </Form>
+            <Button>
+                LOGIN
+            </Button>
+            <Link>CREATE A NEW ACCOUNT</Link>
+        </Wrapper>
+    </Container>
+    <Footer />
+</>
 )
 }
  

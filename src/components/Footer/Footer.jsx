@@ -1,15 +1,19 @@
 import { Email, Facebook, Instagram, LocationCity, Phone, Pinterest, Twitter } from '@material-ui/icons'
 import React from 'react'
 import styledComponents from 'styled-components'
+import { mobile } from "../../responsive";
 
 const Container = styledComponents.div`
     display:flex;
-    margin-top: 40px;
+    padding-top: 40px;
+    background-color: black;
+    color: white;
 
 `
 const Info = styledComponents.div`
     flex: 1;
     margin-left: 20px;
+    ${mobile({display: "none"})}
 `
 const Logo = styledComponents.h1`
     font-size: 40px;
@@ -20,6 +24,7 @@ const Desc = styledComponents.p`
 `
 const SocialMedia = styledComponents.div`
     display: flex;
+ 
 `
 const SocialIcon = styledComponents.div`
     width: 40px;
@@ -42,7 +47,13 @@ const Links = styledComponents.div`
 const Title = styledComponents.h2`
     font-weight: 600; 
     // margin-left: 40px;
-   
+    ${mobile({display: "none"})}
+    
+`
+const Title1 = styledComponents.h2`
+    font-weight: 600; 
+    ${mobile({marginLeft: "-35px"})}
+
 `
 const List = styledComponents.ul`
     list-style: none;
@@ -54,6 +65,7 @@ const Link = styledComponents.li`
     text-decoration: none;
     margin-bottom: 15px;
     width: 50%;
+    ${mobile({display: "none"})}
 `
 const Contacts = styledComponents.div`
     flex: 1;
@@ -65,14 +77,17 @@ const Contacts = styledComponents.div`
 const Contact = styledComponents.div`
     display: flex;
     flex-direction: column;
+
 `
 const ContactItems = styledComponents.div`
     margin: 20px;
     display: flex;
+    ${mobile({marginLeft: "-35px"})}
 `
 const Ico = styledComponents.div`
     margin-right: 10px;
     display: flex;
+    ${mobile({marginLeft: "-65px"})}
 `
 
 
@@ -113,7 +128,7 @@ const  Footer = () => {
             </List>
         </Links>
         <Contacts>
-            <Title>Contact</Title>
+            <Title1>Contact</Title1>
             <Contact>
                 <ContactItems>
                     <Ico>

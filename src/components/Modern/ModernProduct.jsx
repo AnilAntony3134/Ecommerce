@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import styledComponents from 'styled-components'
 import { Cart } from '../../Context'
-
+import { mobile } from "../../responsive";
 
 const Container = styledComponents.div`
     height: 320px;
@@ -43,10 +43,12 @@ const TitleContainer = styledComponents.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    ${mobile({justifyContent: "flex-start"})}
 `
 const Title = styledComponents.h1`
     font-size: 22px;
     font-weight: 600;
+    ${mobile({fontSize: "18px"})}
 `
 const Price = styledComponents.p`
     margin-right: 10px;
@@ -85,6 +87,7 @@ const BuyContainer = styledComponents.div`
     margin-top: 65px;
     align-items:center;
    
+   
     
 `
 const BuyButton = styledComponents.button`
@@ -98,6 +101,7 @@ const BuyButton = styledComponents.button`
     cursor: pointer;
     background-color: black;
     color: white;
+    ${mobile({fontSize: "14px"})}
     
 `
 const BagButton = styledComponents.button`
@@ -108,6 +112,7 @@ const BagButton = styledComponents.button`
     border-radius: 10px;
     border: 1px solid gray;
     cursor: pointer;
+    ${mobile({fontSize: "14px"})}
 `
 const FavouriteButton = styledComponents.div`
     border: 1px solid gray;
@@ -116,6 +121,7 @@ const FavouriteButton = styledComponents.div`
     color: gray;
     cursor: pointer;
     transition: 0.5s;
+    ${mobile({display:"none"})}
     &:hover{
         color: red;
     }

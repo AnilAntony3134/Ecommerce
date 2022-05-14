@@ -1,4 +1,6 @@
 import styledComponents from "styled-components"
+import { Footer, Navbar } from "../components";
+import { mobile } from "../responsive";
 
 const Container = styledComponents.div`
 width: 100vw;
@@ -17,6 +19,7 @@ const Wrapper = styledComponents.div`
     background-color: white;
     width: 35%;
     padding: 15px;
+    ${mobile({width:"65%"})}
 `
 const Form = styledComponents.form`
     display: flex;
@@ -26,8 +29,9 @@ const Form = styledComponents.form`
 const Title = styledComponents.h1`
     font-size: 30px;
     font-weight: 300;
-    
     margin-top: 0;
+    ${mobile({fontSize:"22px"})}
+    
 `
 const Input = styledComponents.input`
     flex: 1;
@@ -39,7 +43,7 @@ const Input = styledComponents.input`
     background-radius: 10%;
 `
 const Agreement = styledComponents.p`
-    
+    ${mobile({fontSize:"14px"})}
 `
 
 const Button = styledComponents.button`
@@ -59,6 +63,8 @@ const Button = styledComponents.button`
 
 const Register = () => {
   return (
+      <>
+      <Navbar />
     <Container>
         <Wrapper>
             <Title>
@@ -80,6 +86,8 @@ const Register = () => {
             </Button>
         </Wrapper>
     </Container>
+    <Footer />
+    </>
   )
 }
 
